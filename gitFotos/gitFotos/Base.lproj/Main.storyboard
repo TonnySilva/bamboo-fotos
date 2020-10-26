@@ -34,10 +34,10 @@
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     </tabBar>
                     <connections>
-                        <segue destination="8XQ-xH-BpX" kind="relationship" relationship="viewControllers" id="ZkB-N7-XmZ"/>
-                        <segue destination="uVx-JG-tm3" kind="relationship" relationship="viewControllers" id="KmB-CC-hlg"/>
-                        <segue destination="Bc1-2C-mHe" kind="relationship" relationship="viewControllers" id="Gxl-gW-HzJ"/>
-                        <segue destination="2OH-Aa-7TH" kind="relationship" relationship="viewControllers" id="MmL-ju-J4A"/>
+                        <segue destination="Bc1-2C-mHe" kind="relationship" relationship="viewControllers" id="SYU-WR-WCx"/>
+                        <segue destination="2OH-Aa-7TH" kind="relationship" relationship="viewControllers" id="yJH-Th-ZL0"/>
+                        <segue destination="uVx-JG-tm3" kind="relationship" relationship="viewControllers" id="ICr-QO-cHv"/>
+                        <segue destination="8XQ-xH-BpX" kind="relationship" relationship="viewControllers" id="jWx-ow-dfm"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="V9q-AH-CJz" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
