@@ -13,6 +13,8 @@
 		8A43A1652546D0050031B57F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8A43A1632546D0050031B57F /* Main.storyboard */; };
 		8A43A1672546D0060031B57F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8A43A1662546D0060031B57F /* Assets.xcassets */; };
 		8A43A16A2546D0060031B57F /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8A43A1682546D0060031B57F /* LaunchScreen.storyboard */; };
+		8A49A2CB25470A0900B8CAA6 /* PicturesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A49A2CA25470A0900B8CAA6 /* PicturesViewController.swift */; };
+		8A49A2CE25470A4D00B8CAA6 /* PicturesCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A49A2CD25470A4D00B8CAA6 /* PicturesCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +26,8 @@
 		8A43A1662546D0060031B57F /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		8A43A1692546D0060031B57F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		8A43A16B2546D0060031B57F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		8A49A2CA25470A0900B8CAA6 /* PicturesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PicturesViewController.swift; sourceTree = "<group>"; };
+		8A49A2CD25470A4D00B8CAA6 /* PicturesCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PicturesCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -56,6 +60,7 @@
 		8A43A15C2546D0050031B57F /* gitFotos */ = {
 			isa = PBXGroup;
 			children = (
+				8A49A2C82547098E00B8CAA6 /* Feature */,
 				8A43A15D2546D0050031B57F /* AppDelegate.swift */,
 				8A43A15F2546D0050031B57F /* SceneDelegate.swift */,
 				8A43A1612546D0050031B57F /* ViewController.swift */,
@@ -65,6 +70,23 @@
 				8A43A16B2546D0060031B57F /* Info.plist */,
 			);
 			path = gitFotos;
+			sourceTree = "<group>";
+		};
+		8A49A2C82547098E00B8CAA6 /* Feature */ = {
+			isa = PBXGroup;
+			children = (
+				8A49A2C9254709AA00B8CAA6 /* pictureCollection */,
+			);
+			path = Feature;
+			sourceTree = "<group>";
+		};
+		8A49A2C9254709AA00B8CAA6 /* pictureCollection */ = {
+			isa = PBXGroup;
+			children = (
+				8A49A2CA25470A0900B8CAA6 /* PicturesViewController.swift */,
+				8A49A2CD25470A4D00B8CAA6 /* PicturesCell.swift */,
+			);
+			path = pictureCollection;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -138,7 +160,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				8A43A1622546D0050031B57F /* ViewController.swift in Sources */,
+				8A49A2CB25470A0900B8CAA6 /* PicturesViewController.swift in Sources */,
 				8A43A15E2546D0050031B57F /* AppDelegate.swift in Sources */,
+				8A49A2CE25470A4D00B8CAA6 /* PicturesCell.swift in Sources */,
 				8A43A1602546D0050031B57F /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
