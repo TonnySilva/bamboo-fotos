@@ -8,7 +8,53 @@
 import Foundation
 import UIKit
 
+
+
+
 class PictureViewController: UIViewController  {
+//  creacion botones de accion
+  
+  @IBAction func butonYears(_ sender: UIButton) {
+    print("Years")
+   selectButon(sender)
+  }
+  @IBAction func butonMonths(_ sender: UIButton) {
+    print("Months")
+    selectButon(sender)
+  }
+ 
+  @IBAction func butonDays(_ sender: UIButton) {
+    print("Days")
+    selectButon(sender)
+  }
+  @IBAction func butonPhotos(_ sender: UIButton) {
+    print("photos")
+    selectButon(sender)
+  }
+//  total de los botones creados en una funcion
+  func selectButon(_ sender: UIButton){
+    outletYears.isSelected = false
+    outletMonths.isSelected = false
+    outletDays.isSelected = false
+    outletPhotos.isSelected = false
+    
+    sender.isSelected = true
+  }
+  
+  
+  @IBOutlet weak var stackViewButons: UIStackView!
+  
+//  creacion outlet de los botones
+  
+  @IBOutlet weak var outletYears: UIButton!
+  @IBOutlet weak var outletMonths: UIButton!
+  @IBOutlet weak var outletDays: UIButton!
+  @IBOutlet weak var outletPhotos: UIButton!
+  
+//
+  
+  
+  
   let maxHorizontalCells: CGFloat = 0
   let marginBetweenCells: CGFloat = 0
   
@@ -59,6 +105,8 @@ extension PictureViewController: UICollectionViewDataSource {
       
     }
     cell.backgroundColor = .black
+    
+    stackViewButons.layer.cornerRadius = 30
     return cell
   }
 }
