@@ -9,16 +9,14 @@ import Foundation
 import UIKit
 
 
-
-
 class PictureViewController: UIViewController  {
   
-//  creacion variables de las medidas de las pantallas
+  //  creacion variables de las medidas de las pantallas
   var cellWidth: CGFloat = 75
   var cellHeight: CGFloat = 75
   
   
-//  creacion botones de accion
+  //  creacion botones de accion
   
   @IBAction func butonYears(_ sender: UIButton) {
     print("Years")
@@ -27,7 +25,7 @@ class PictureViewController: UIViewController  {
     cellHeight = 50
     collectionView.reloadData()
     
-   selectButon(sender)
+    selectButon(sender)
   }
   @IBAction func butonMonths(_ sender: UIButton) {
     print("Months")
@@ -38,7 +36,7 @@ class PictureViewController: UIViewController  {
     
     selectButon(sender)
   }
- 
+  
   @IBAction func butonDays(_ sender: UIButton) {
     print("Days")
     
@@ -57,7 +55,7 @@ class PictureViewController: UIViewController  {
     
     selectButon(sender)
   }
-//  total de los botones creados en una funcion
+  //  total de los botones creados en una funcion
   func selectButon(_ sender: UIButton){
     outletYears.isSelected = false
     outletMonths.isSelected = false
@@ -70,14 +68,14 @@ class PictureViewController: UIViewController  {
   
   @IBOutlet weak var stackViewButons: UIStackView!
   
-//  creacion outlet de los botones
+  //  creacion outlet de los botones
   
   @IBOutlet weak var outletYears: UIButton!
   @IBOutlet weak var outletMonths: UIButton!
   @IBOutlet weak var outletDays: UIButton!
   @IBOutlet weak var outletPhotos: UIButton!
   
-//
+  //
   
   
   
@@ -113,7 +111,7 @@ extension PictureViewController: UICollectionViewDataSource {
       pictureCell.titleLabel.text = "\(indexPath.row)"
       //      poner 2imagen marron - segunda opcion de poner imagen la k esta en //2
       pictureCell.previewImage.image = UIImage (named: "pic2")
-      //      2 pictureCell.previewImage.image = #imageLiteral(resourceName: "pic2")
+//            2 pictureCell.previewImage.image = #imageLiteral(resourceName: "pic2")
       
       //      imagen verde e imagen marron alternadas
       //      indexpathrow par o impar
