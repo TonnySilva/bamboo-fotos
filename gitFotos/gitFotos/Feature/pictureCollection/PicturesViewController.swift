@@ -12,23 +12,49 @@ import UIKit
 
 
 class PictureViewController: UIViewController  {
+  
+//  creacion variables de las medidas de las pantallas
+  var cellWidth: CGFloat = 75
+  var cellHeight: CGFloat = 75
+  
+  
 //  creacion botones de accion
   
   @IBAction func butonYears(_ sender: UIButton) {
     print("Years")
+    
+    cellWidth = 50
+    cellHeight = 50
+    collectionView.reloadData()
+    
    selectButon(sender)
   }
   @IBAction func butonMonths(_ sender: UIButton) {
     print("Months")
+    
+    cellWidth = 100
+    cellHeight = 100
+    collectionView.reloadData()
+    
     selectButon(sender)
   }
  
   @IBAction func butonDays(_ sender: UIButton) {
     print("Days")
+    
+    cellWidth = 150
+    cellHeight = 150
+    collectionView.reloadData()
+    
     selectButon(sender)
   }
   @IBAction func butonPhotos(_ sender: UIButton) {
     print("photos")
+    
+    cellWidth = 200
+    cellHeight = 200
+    collectionView.reloadData()
+    
     selectButon(sender)
   }
 //  total de los botones creados en una funcion
@@ -119,7 +145,7 @@ extension PictureViewController: UICollectionViewDelegate {
 
 extension PictureViewController: UICollectionViewDelegateFlowLayout {
   func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-    return CGSize(width: 90, height: 90)
+    return CGSize(width: cellWidth, height: cellHeight)
   }
   
   func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAt section: Int) -> CGFloat {
