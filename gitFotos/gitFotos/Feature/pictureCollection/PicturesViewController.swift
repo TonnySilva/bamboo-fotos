@@ -11,6 +11,7 @@ import UIKit
 
 class PictureViewController: UIViewController  {
   
+  
   //  creacion variables de las medidas de las pantallas
   var cellWidth: CGFloat = 75
   var cellHeight: CGFloat = 75
@@ -93,6 +94,29 @@ class PictureViewController: UIViewController  {
     super.viewDidLoad()
     
   }
+  //como saber si el movil esta en vertical u horizontal.
+  
+  override func viewWillTransition(to size: CGSize, with coordinator: UIViewControllerTransitionCoordinator) {
+    super.viewWillTransition(to: size, with: coordinator)
+    
+//    cambiar scroll a horizontal cuando el movil esta en landscape
+    //      otra solucion se puede usar el guard let
+    guard let layout = collectionView.collectionViewLayout
+    if let layout = collectionView.collectionViewLayout as? UICollectionViewFlowLayout {
+//
+      
+    if UIDevice.current.orientation.isLandscape {
+      layout.scrollDirection = .horizontal
+      print("Landscape")
+      
+    } else if UIDevice.current.orientation.isPortrait {
+      
+      layout.scrollDirection = .vertical
+      print("Portrait")
+    }
+    }
+  }
+  //
 }
 extension PictureViewController: UICollectionViewDataSource {
   func numberOfSections(in collectionView: UICollectionView) -> Int {
@@ -111,7 +135,7 @@ extension PictureViewController: UICollectionViewDataSource {
       pictureCell.titleLabel.text = "\(indexPath.row)"
       //      poner 2imagen marron - segunda opcion de poner imagen la k esta en //2
       pictureCell.previewImage.image = UIImage (named: "pic2")
-//            2 pictureCell.previewImage.image = #imageLiteral(resourceName: "pic2")
+      //            2 pictureCell.previewImage.image = #imageLiteral(resourceName: "pic2")
       
       //      imagen verde e imagen marron alternadas
       //      indexpathrow par o impar
@@ -133,6 +157,7 @@ extension PictureViewController: UICollectionViewDataSource {
     stackViewButons.layer.cornerRadius = 30
     return cell
   }
+  
 }
 
 extension PictureViewController: UICollectionViewDelegate {
