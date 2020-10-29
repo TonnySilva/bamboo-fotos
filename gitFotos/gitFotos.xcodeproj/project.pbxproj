@@ -76,6 +76,7 @@
 		8A6A9E08254ADCC000C355EA /* f9578y-Oh1k.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 8A6A9DCC254ADCC000C355EA /* f9578y-Oh1k.jpg */; };
 		8A6A9E09254ADCC000C355EA /* cssvEZacHvQ.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 8A6A9DCD254ADCC000C355EA /* cssvEZacHvQ.jpg */; };
 		8A6A9E0A254ADCC000C355EA /* VgMUzJ3gX2o.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 8A6A9DCE254ADCC000C355EA /* VgMUzJ3gX2o.jpg */; };
+		8A6A9E0D254ADE1A00C355EA /* imagesData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A6A9E0C254ADE1A00C355EA /* imagesData.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -150,6 +151,7 @@
 		8A6A9DCC254ADCC000C355EA /* f9578y-Oh1k.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "f9578y-Oh1k.jpg"; sourceTree = "<group>"; };
 		8A6A9DCD254ADCC000C355EA /* cssvEZacHvQ.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = cssvEZacHvQ.jpg; sourceTree = "<group>"; };
 		8A6A9DCE254ADCC000C355EA /* VgMUzJ3gX2o.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = VgMUzJ3gX2o.jpg; sourceTree = "<group>"; };
+		8A6A9E0C254ADE1A00C355EA /* imagesData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = imagesData.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -207,6 +209,7 @@
 			isa = PBXGroup;
 			children = (
 				8A49A2CA25470A0900B8CAA6 /* PicturesViewController.swift */,
+				8A6A9E0C254ADE1A00C355EA /* imagesData.swift */,
 				8A49A2CD25470A4D00B8CAA6 /* PicturesCell.swift */,
 				8A4EBAC2254817040094C025 /* PicturesCell.xib */,
 			);
@@ -420,6 +423,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				8A43A1622546D0050031B57F /* ViewController.swift in Sources */,
+				8A6A9E0D254ADE1A00C355EA /* imagesData.swift in Sources */,
 				8A49A2CB25470A0900B8CAA6 /* PicturesViewController.swift in Sources */,
 				8A43A15E2546D0050031B57F /* AppDelegate.swift in Sources */,
 				8A49A2CE25470A4D00B8CAA6 /* PicturesCell.swift in Sources */,

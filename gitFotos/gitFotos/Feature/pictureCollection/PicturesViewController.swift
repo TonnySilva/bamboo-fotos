@@ -125,17 +125,20 @@ extension PictureViewController: UICollectionViewDataSource {
   }
   
   func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-    return 100
+    return ImagesData.numOfImages()
   }
   
   func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
     
     let cell = collectionView.dequeueReusableCell(withReuseIdentifier: reuseIdentifier, for: indexPath)
     if let pictureCell = (cell as? PicturesCell) {
+//      añado fotos de carpeta
+      pictureCell.previewImage.image = ImagesData.imageForPosition(indexPath.row)
+//      
       //      asignar un numero a cada celda
       pictureCell.titleLabel.text = "\(indexPath.row)"
       //      poner 2imagen marron - segunda opcion de poner imagen la k esta en //2
-      pictureCell.previewImage.image = UIImage (named: "pic2")
+//      pictureCell.previewImage.image = UIImage (named: "pic2")
       //            2 pictureCell.previewImage.image = #imageLiteral(resourceName: "pic2")
       
       //      imagen verde e imagen marron alternadas
@@ -145,10 +148,13 @@ extension PictureViewController: UICollectionViewDataSource {
       //      pictureCell.previewImage.image = indexPath.row % 2 == 0 ? UIImage(named: "pic1") : UIImage(named: "pic2")
       //      solucion 2
       if indexPath.row % 2 == 0 {
-        pictureCell.previewImage.image = UIImage (named: "pic1")
+//        comentada porque ahora le agrego fotos de la carpeta
+//        pictureCell.previewImage.image = UIImage (named: "pic1")
+        
         print(indexPath.row)
       }else {
-        pictureCell.previewImage.image = UIImage (named: "pic2")
+//        pictureCell.previewImage.image = UIImage (named: "pic2")
+        
       }
       
       
