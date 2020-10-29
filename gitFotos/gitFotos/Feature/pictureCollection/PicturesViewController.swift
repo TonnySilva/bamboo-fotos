@@ -99,21 +99,22 @@ class PictureViewController: UIViewController  {
   override func viewWillTransition(to size: CGSize, with coordinator: UIViewControllerTransitionCoordinator) {
     super.viewWillTransition(to: size, with: coordinator)
     
-//    cambiar scroll a horizontal cuando el movil esta en landscape
-    //      otra solucion se puede usar el guard let
-    guard let layout = collectionView.collectionViewLayout
+    //    cambiar scroll a horizontal cuando el movil esta en landscape
+    //      otra solucion para cambiar scroll usando el guard let
+    //    guard let layout = collectionView.collectionViewLayout as? UICollectionViewFlowLayout else {return}
+    //solucion if let para cambiar scroll
     if let layout = collectionView.collectionViewLayout as? UICollectionViewFlowLayout {
-//
+      //
       
-    if UIDevice.current.orientation.isLandscape {
-      layout.scrollDirection = .horizontal
-      print("Landscape")
-      
-    } else if UIDevice.current.orientation.isPortrait {
-      
-      layout.scrollDirection = .vertical
-      print("Portrait")
-    }
+      if UIDevice.current.orientation.isLandscape {
+        layout.scrollDirection = .horizontal
+        print("Landscape")
+        
+      } else if UIDevice.current.orientation.isPortrait {
+        
+        layout.scrollDirection = .vertical
+        print("Portrait")
+      }
     }
   }
   //
