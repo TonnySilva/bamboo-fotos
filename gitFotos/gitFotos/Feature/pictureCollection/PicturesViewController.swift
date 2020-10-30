@@ -13,8 +13,8 @@ class PictureViewController: UIViewController  {
   
   
   //  creacion variables de las medidas de las pantallas
-  var cellWidth: CGFloat = 75
-  var cellHeight: CGFloat = 75
+//  var cellWidth: CGFloat = 50
+//  var cellHeight: CGFloat = 50
   
   
   //  creacion botones de accion
@@ -22,8 +22,9 @@ class PictureViewController: UIViewController  {
   @IBAction func butonYears(_ sender: UIButton) {
     print("Years")
     
-    cellWidth = 50
-    cellHeight = 50
+    numOfHorizontalCells = 1
+//    cellWidth = 50
+//    cellHeight = 50
     collectionView.reloadData()
     
     selectButon(sender)
@@ -31,8 +32,9 @@ class PictureViewController: UIViewController  {
   @IBAction func butonMonths(_ sender: UIButton) {
     print("Months")
     
-    cellWidth = 100
-    cellHeight = 100
+//    cellWidth = 100
+//    cellHeight = 100
+    numOfHorizontalCells = 3
     collectionView.reloadData()
     
     selectButon(sender)
@@ -41,8 +43,9 @@ class PictureViewController: UIViewController  {
   @IBAction func butonDays(_ sender: UIButton) {
     print("Days")
     
-    cellWidth = 150
-    cellHeight = 150
+//    cellWidth = 150
+//    cellHeight = 150
+    numOfHorizontalCells = 5
     collectionView.reloadData()
     
     selectButon(sender)
@@ -50,8 +53,9 @@ class PictureViewController: UIViewController  {
   @IBAction func butonPhotos(_ sender: UIButton) {
     print("photos")
     
-    cellWidth = 200
-    cellHeight = 200
+//    cellWidth = 200
+//    cellHeight = 200
+    numOfHorizontalCells = 7
     collectionView.reloadData()
     
     selectButon(sender)
@@ -79,9 +83,8 @@ class PictureViewController: UIViewController  {
   //
   
   
-  
-  let maxHorizontalCells: CGFloat = 0
-  let marginBetweenCells: CGFloat = 0
+  var numOfHorizontalCells: CGFloat = 2.0
+  var marginBetweenCells: CGFloat = 5.0
   
   private let reuseIdentifier = String(describing: PicturesCell.self) //pictures cell
   
@@ -132,13 +135,13 @@ extension PictureViewController: UICollectionViewDataSource {
     
     let cell = collectionView.dequeueReusableCell(withReuseIdentifier: reuseIdentifier, for: indexPath)
     if let pictureCell = (cell as? PicturesCell) {
-//      añado fotos de carpeta
+      //      añado fotos de carpeta
       pictureCell.previewImage.image = ImagesData.imageForPosition(indexPath.row)
-//      
+      //
       //      asignar un numero a cada celda
       pictureCell.titleLabel.text = "\(indexPath.row)"
       //      poner 2imagen marron - segunda opcion de poner imagen la k esta en //2
-//      pictureCell.previewImage.image = UIImage (named: "pic2")
+      //      pictureCell.previewImage.image = UIImage (named: "pic2")
       //            2 pictureCell.previewImage.image = #imageLiteral(resourceName: "pic2")
       
       //      imagen verde e imagen marron alternadas
@@ -148,12 +151,12 @@ extension PictureViewController: UICollectionViewDataSource {
       //      pictureCell.previewImage.image = indexPath.row % 2 == 0 ? UIImage(named: "pic1") : UIImage(named: "pic2")
       //      solucion 2
       if indexPath.row % 2 == 0 {
-//        comentada porque ahora le agrego fotos de la carpeta
-//        pictureCell.previewImage.image = UIImage (named: "pic1")
+        //        comentada porque ahora le agrego fotos de la carpeta
+        //        pictureCell.previewImage.image = UIImage (named: "pic1")
         
         print(indexPath.row)
       }else {
-//        pictureCell.previewImage.image = UIImage (named: "pic2")
+        //        pictureCell.previewImage.image = UIImage (named: "pic2")
         
       }
       
@@ -175,15 +178,19 @@ extension PictureViewController: UICollectionViewDelegate {
 
 extension PictureViewController: UICollectionViewDelegateFlowLayout {
   func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-    return CGSize(width: cellWidth, height: cellHeight)
-  }
+
+          let cellWidth = (collectionView.frame.size.width - (numOfHorizontalCells-1)*marginBetweenCells) / numOfHorizontalCells
+
+          return CGSize(width: cellWidth, height: cellWidth)
+
+      }
   
   func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAt section: Int) -> CGFloat {
     return marginBetweenCells
   }
   
   func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumInteritemSpacingForSectionAt section: Int) -> CGFloat {
-    return maxHorizontalCells
+    return marginBetweenCells
   }
 }
 

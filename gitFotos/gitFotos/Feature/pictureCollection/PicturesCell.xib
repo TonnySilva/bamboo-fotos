@@ -16,22 +16,22 @@
                 <rect key="frame" x="0.0" y="0.0" width="300" height="200"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
-                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="pic1" translatesAutoresizingMaskIntoConstraints="NO" id="fFe-Kb-tnB">
+                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="pic1" translatesAutoresizingMaskIntoConstraints="NO" id="fFe-Kb-tnB">
                         <rect key="frame" x="0.0" y="0.0" width="300" height="200"/>
                     </imageView>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="10" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zLi-0r-oVw">
-                        <rect key="frame" x="107" y="51" width="86.5" height="98"/>
-                        <fontDescription key="fontDescription" type="system" pointSize="82"/>
-                        <nil key="textColor"/>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="10" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zLi-0r-oVw">
+                        <rect key="frame" x="257" y="152" width="43" height="48"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="40"/>
+                        <color key="textColor" red="1" green="0.116620448" blue="0.14259425680000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                         <nil key="highlightedColor"/>
                     </label>
                 </subviews>
                 <constraints>
+                    <constraint firstAttribute="trailing" secondItem="zLi-0r-oVw" secondAttribute="trailing" id="BSm-WE-V0y"/>
                     <constraint firstAttribute="trailing" secondItem="fFe-Kb-tnB" secondAttribute="trailing" id="D4l-Wi-hnn"/>
-                    <constraint firstItem="zLi-0r-oVw" firstAttribute="centerY" secondItem="qZL-Ue-lZs" secondAttribute="centerY" id="T8t-9C-Vzh"/>
                     <constraint firstItem="fFe-Kb-tnB" firstAttribute="top" secondItem="qZL-Ue-lZs" secondAttribute="top" id="h0x-Su-adH"/>
+                    <constraint firstAttribute="bottom" secondItem="zLi-0r-oVw" secondAttribute="bottom" id="j6u-OI-10n"/>
                     <constraint firstItem="fFe-Kb-tnB" firstAttribute="leading" secondItem="qZL-Ue-lZs" secondAttribute="leading" id="kF5-MI-oIx"/>
-                    <constraint firstItem="zLi-0r-oVw" firstAttribute="centerX" secondItem="qZL-Ue-lZs" secondAttribute="centerX" id="kva-k9-EME"/>
                     <constraint firstAttribute="bottom" secondItem="fFe-Kb-tnB" secondAttribute="bottom" id="upu-fq-50r"/>
                 </constraints>
             </collectionViewCellContentView>
