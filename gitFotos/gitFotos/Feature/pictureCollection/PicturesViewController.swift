@@ -12,6 +12,8 @@ import UIKit
 class PictureViewController: UIViewController  {
   
   
+
+  
   //  creacion variables de las medidas de las pantallas
 //  var cellWidth: CGFloat = 50
 //  var cellHeight: CGFloat = 50
@@ -96,6 +98,7 @@ class PictureViewController: UIViewController  {
     collectionView.register(nib, forCellWithReuseIdentifier: reuseIdentifier)
     super.viewDidLoad()
     
+    
   }
   //como saber si el movil esta en vertical u horizontal.
   
@@ -138,6 +141,7 @@ extension PictureViewController: UICollectionViewDataSource {
       //      añado fotos de carpeta
       pictureCell.previewImage.image = ImagesData.imageForPosition(indexPath.row)
       //
+      
       //      asignar un numero a cada celda
       pictureCell.titleLabel.text = "\(indexPath.row)"
       //      poner 2imagen marron - segunda opcion de poner imagen la k esta en //2
@@ -173,8 +177,14 @@ extension PictureViewController: UICollectionViewDataSource {
 extension PictureViewController: UICollectionViewDelegate {
   func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath){
     print(indexPath.row)
+//    asignando una posicion de la celda seleccionada en el picturefullscreen al darle clic y abrir la nueva pantalla
+    PicturesViewModel.selectedImage =  ImagesData.imageForPosition(indexPath.row)
+//
+ performSegue(withIdentifier: "segueToDetail", sender: nil)
+    
+    }
   }
-}
+
 
 extension PictureViewController: UICollectionViewDelegateFlowLayout {
   func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {

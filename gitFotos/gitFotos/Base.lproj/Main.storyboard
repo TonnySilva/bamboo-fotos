@@ -78,11 +78,40 @@
             </objects>
             <point key="canvasLocation" x="-586" y="27"/>
         </scene>
+        <!--Picture Full Screen View Controller-->
+        <scene sceneID="hNQ-qs-1sM">
+            <objects>
+                <viewController id="Ecy-hN-Jb9" customClass="PictureFullScreenViewController" customModule="gitFotos" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="4OU-tp-0XX">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="aRo-d7-LEp">
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="808"/>
+                            </imageView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="uIp-jg-hVh"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="aRo-d7-LEp" firstAttribute="leading" secondItem="uIp-jg-hVh" secondAttribute="leading" id="40k-bn-Mwk"/>
+                            <constraint firstItem="uIp-jg-hVh" firstAttribute="trailing" secondItem="aRo-d7-LEp" secondAttribute="trailing" id="7xd-Qt-aFF"/>
+                            <constraint firstItem="uIp-jg-hVh" firstAttribute="bottom" secondItem="aRo-d7-LEp" secondAttribute="bottom" id="UjU-fw-vbi"/>
+                            <constraint firstItem="aRo-d7-LEp" firstAttribute="top" secondItem="uIp-jg-hVh" secondAttribute="top" id="gHJ-Yi-0Kw"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="imageView" destination="aRo-d7-LEp" id="mo2-2h-k4p"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="ihs-OL-swO" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-2990" y="781"/>
+        </scene>
         <!--Photos-->
         <scene sceneID="Edw-Tf-lor">
             <objects>
                 <viewController id="Bc1-2C-mHe" customClass="PictureViewController" customModule="gitFotos" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="2dW-DW-ef5">
+                    <view key="view" contentMode="scaleToFill" id="2dW-DW-ef5" customClass="PicturesCell" customModule="gitFotos" customModuleProvider="target">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
@@ -189,6 +218,7 @@
                         <outlet property="outletPhotos" destination="mes-Uz-I8p" id="2Tl-ku-E20"/>
                         <outlet property="outletYears" destination="3Fp-Cf-qJf" id="SPx-m4-uFU"/>
                         <outlet property="stackViewButons" destination="vjv-P0-oeA" id="3Nj-gd-pG2"/>
+                        <segue destination="Ecy-hN-Jb9" kind="presentation" identifier="segueToDetail" id="tLP-p9-6KY"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="24Y-vS-3yn" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
