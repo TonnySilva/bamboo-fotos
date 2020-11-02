@@ -18,7 +18,7 @@ class RandomPictureViewController: UIViewController {
       refreshPicture()
       
 //     solucion 1 temporizador con cambio de imagen
-    timer = Timer.scheduledTimer(timeInterval: 3.0, target: self, selector: #selector(refreshPicture), userInfo: nil, repeats: true)
+//    timer = Timer.scheduledTimer(timeInterval: 4.0, target: self, selector: #selector(refreshPicture), userInfo: nil, repeats: true)
       
 //      solucion 2 crear el temporizador con cambio de imagen
     
@@ -59,7 +59,22 @@ class RandomPictureViewController: UIViewController {
                       },
                       completion: nil)
   }
- 
+  
+  override func viewDidAppear(_ animated: Bool) {
+    super.viewDidAppear(animated)
+    print("Appear")
+    
+    timer = Timer.scheduledTimer(timeInterval: 3.0, target: self, selector: #selector(refreshPicture), userInfo: nil, repeats: true)
+
+  }
+  
+  override func viewDidDisappear(_ animated: Bool) {
+    super.viewDidDisappear(animated)
+    print("Desappear")
+    timer.invalidate()
+  }
+  
+  
         // Do any additional setup after loading the view.
     
     
