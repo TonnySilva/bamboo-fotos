@@ -47,15 +47,29 @@
         <!--For You-->
         <scene sceneID="erd-nr-Rns">
             <objects>
-                <viewController id="2OH-Aa-7TH" sceneMemberID="viewController">
+                <viewController id="2OH-Aa-7TH" customClass="RandomPictureViewController" customModule="gitFotos" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Ej1-qa-3M0">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="KNl-S1-rPN">
+                                <rect key="frame" x="0.0" y="44" width="414" height="769"/>
+                            </imageView>
+                        </subviews>
                         <viewLayoutGuide key="safeArea" id="K0N-75-84P"/>
                         <color key="backgroundColor" systemColor="linkColor"/>
+                        <constraints>
+                            <constraint firstItem="K0N-75-84P" firstAttribute="trailing" secondItem="KNl-S1-rPN" secondAttribute="trailing" id="5dW-o4-p3F"/>
+                            <constraint firstItem="K0N-75-84P" firstAttribute="bottom" secondItem="KNl-S1-rPN" secondAttribute="bottom" id="UQV-He-u5L"/>
+                            <constraint firstItem="KNl-S1-rPN" firstAttribute="leading" secondItem="K0N-75-84P" secondAttribute="leading" id="l0b-ge-1qe"/>
+                            <constraint firstItem="KNl-S1-rPN" firstAttribute="top" secondItem="K0N-75-84P" secondAttribute="top" id="sP8-go-gwY"/>
+                        </constraints>
                     </view>
                     <tabBarItem key="tabBarItem" title="For You" image="heart.text.square.fill" catalog="system" id="eRC-Hl-5wV"/>
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
+                    <connections>
+                        <outlet property="imageView" destination="KNl-S1-rPN" id="EIr-sd-Oiy"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ZTt-Mc-zMF" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>

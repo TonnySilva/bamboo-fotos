@@ -12,11 +12,11 @@ import UIKit
 class PictureViewController: UIViewController  {
   
   
-
+  
   
   //  creacion variables de las medidas de las pantallas
-//  var cellWidth: CGFloat = 50
-//  var cellHeight: CGFloat = 50
+  //  var cellWidth: CGFloat = 50
+  //  var cellHeight: CGFloat = 50
   
   
   //  creacion botones de accion
@@ -25,8 +25,8 @@ class PictureViewController: UIViewController  {
     print("Years")
     
     numOfHorizontalCells = 1
-//    cellWidth = 50
-//    cellHeight = 50
+    //    cellWidth = 50
+    //    cellHeight = 50
     collectionView.reloadData()
     
     selectButon(sender)
@@ -34,8 +34,8 @@ class PictureViewController: UIViewController  {
   @IBAction func butonMonths(_ sender: UIButton) {
     print("Months")
     
-//    cellWidth = 100
-//    cellHeight = 100
+    //    cellWidth = 100
+    //    cellHeight = 100
     numOfHorizontalCells = 3
     collectionView.reloadData()
     
@@ -45,8 +45,8 @@ class PictureViewController: UIViewController  {
   @IBAction func butonDays(_ sender: UIButton) {
     print("Days")
     
-//    cellWidth = 150
-//    cellHeight = 150
+    //    cellWidth = 150
+    //    cellHeight = 150
     numOfHorizontalCells = 5
     collectionView.reloadData()
     
@@ -55,8 +55,8 @@ class PictureViewController: UIViewController  {
   @IBAction func butonPhotos(_ sender: UIButton) {
     print("photos")
     
-//    cellWidth = 200
-//    cellHeight = 200
+    //    cellWidth = 200
+    //    cellHeight = 200
     numOfHorizontalCells = 7
     collectionView.reloadData()
     
@@ -177,23 +177,23 @@ extension PictureViewController: UICollectionViewDataSource {
 extension PictureViewController: UICollectionViewDelegate {
   func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath){
     print(indexPath.row)
-//    asignando una posicion de la celda seleccionada en el picturefullscreen al darle clic y abrir la nueva pantalla
+    //    asignando una posicion de la celda seleccionada en el picturefullscreen al darle clic y abrir la nueva pantalla
     PicturesViewModel.selectedImage =  ImagesData.imageForPosition(indexPath.row)
-//
- performSegue(withIdentifier: "segueToDetail", sender: nil)
+    //
+    performSegue(withIdentifier: "segueToDetail", sender: nil)
     
-    }
   }
+}
 
 
 extension PictureViewController: UICollectionViewDelegateFlowLayout {
   func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-
-          let cellWidth = (collectionView.frame.size.width - (numOfHorizontalCells-1)*marginBetweenCells) / numOfHorizontalCells
-
-          return CGSize(width: cellWidth, height: cellWidth)
-
-      }
+    
+    let cellWidth = (collectionView.frame.size.width - (numOfHorizontalCells-1)*marginBetweenCells) / numOfHorizontalCells
+    
+    return CGSize(width: cellWidth, height: cellWidth)
+    
+  }
   
   func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAt section: Int) -> CGFloat {
     return marginBetweenCells
