@@ -134,18 +134,64 @@
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="aRo-d7-LEp">
                                 <rect key="frame" x="0.0" y="0.0" width="414" height="808"/>
                             </imageView>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="yVD-Q6-Bb3">
+                                <rect key="frame" x="299" y="693" width="100" height="100"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Me gusta!" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="stQ-S9-MWC">
+                                        <rect key="frame" x="1.5" y="0.0" width="98.5" height="27.5"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="23"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="iwx-NQ-o0p">
+                                        <rect key="frame" x="51" y="69" width="51" height="31"/>
+                                        <connections>
+                                            <action selector="actionSwitch:" destination="Ecy-hN-Jb9" eventType="valueChanged" id="diA-5j-2Cb"/>
+                                        </connections>
+                                    </switch>
+                                </subviews>
+                                <color key="backgroundColor" systemColor="systemYellowColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="trailing" secondItem="iwx-NQ-o0p" secondAttribute="trailing" id="6fs-Q0-ed4"/>
+                                    <constraint firstAttribute="trailing" secondItem="stQ-S9-MWC" secondAttribute="trailing" id="7YX-OQ-aWV"/>
+                                    <constraint firstItem="stQ-S9-MWC" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="yVD-Q6-Bb3" secondAttribute="leading" constant="1.5" id="8Gf-OI-OPq"/>
+                                    <constraint firstAttribute="bottom" secondItem="iwx-NQ-o0p" secondAttribute="bottom" id="G6Z-wt-vWf"/>
+                                    <constraint firstAttribute="height" constant="100" id="mwq-Uu-C4N"/>
+                                    <constraint firstAttribute="width" constant="100" id="udL-FU-Afe"/>
+                                    <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="70" id="wqA-8G-EvT"/>
+                                    <constraint firstItem="stQ-S9-MWC" firstAttribute="top" secondItem="yVD-Q6-Bb3" secondAttribute="top" id="x83-wU-lOL"/>
+                                </constraints>
+                            </view>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8fs-4P-48N">
+                                <rect key="frame" x="379" y="10" width="25" height="25"/>
+                                <color key="backgroundColor" systemColor="linkColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="25" id="6M2-4Y-Pzc"/>
+                                    <constraint firstAttribute="height" constant="25" id="PAF-Nx-P2t"/>
+                                </constraints>
+                                <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <state key="normal" image="multiply" catalog="system"/>
+                                <connections>
+                                    <action selector="xButton:" destination="Ecy-hN-Jb9" eventType="touchUpInside" id="SUB-Uo-zS8"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="uIp-jg-hVh"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
-                            <constraint firstItem="aRo-d7-LEp" firstAttribute="leading" secondItem="uIp-jg-hVh" secondAttribute="leading" id="40k-bn-Mwk"/>
-                            <constraint firstItem="uIp-jg-hVh" firstAttribute="trailing" secondItem="aRo-d7-LEp" secondAttribute="trailing" id="7xd-Qt-aFF"/>
-                            <constraint firstItem="uIp-jg-hVh" firstAttribute="bottom" secondItem="aRo-d7-LEp" secondAttribute="bottom" id="UjU-fw-vbi"/>
-                            <constraint firstItem="aRo-d7-LEp" firstAttribute="top" secondItem="uIp-jg-hVh" secondAttribute="top" id="gHJ-Yi-0Kw"/>
+                            <constraint firstItem="aRo-d7-LEp" firstAttribute="top" secondItem="uIp-jg-hVh" secondAttribute="top" id="0ev-CN-JC8"/>
+                            <constraint firstItem="aRo-d7-LEp" firstAttribute="trailing" secondItem="uIp-jg-hVh" secondAttribute="trailing" id="7j0-WL-XaA"/>
+                            <constraint firstItem="uIp-jg-hVh" firstAttribute="bottom" secondItem="yVD-Q6-Bb3" secondAttribute="bottom" constant="15" id="834-th-KNf"/>
+                            <constraint firstAttribute="trailing" secondItem="8fs-4P-48N" secondAttribute="trailing" constant="10" id="8UJ-J5-03x"/>
+                            <constraint firstItem="uIp-jg-hVh" firstAttribute="trailing" secondItem="yVD-Q6-Bb3" secondAttribute="trailing" constant="15" id="PKf-bd-5wc"/>
+                            <constraint firstItem="aRo-d7-LEp" firstAttribute="bottom" secondItem="uIp-jg-hVh" secondAttribute="bottom" id="jY7-6j-v8k"/>
+                            <constraint firstItem="8fs-4P-48N" firstAttribute="top" secondItem="uIp-jg-hVh" secondAttribute="top" constant="10" id="uTp-1a-hEh"/>
+                            <constraint firstItem="aRo-d7-LEp" firstAttribute="leading" secondItem="uIp-jg-hVh" secondAttribute="leading" id="zyf-qH-7Wb"/>
                         </constraints>
                     </view>
                     <connections>
                         <outlet property="imageView" destination="aRo-d7-LEp" id="mo2-2h-k4p"/>
+                        <outlet property="switchMegusta" destination="iwx-NQ-o0p" id="YFA-SL-r39"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ihs-OL-swO" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -274,6 +320,7 @@
     <resources>
         <image name="heart.text.square.fill" catalog="system" width="128" height="114"/>
         <image name="magnifyingglass" catalog="system" width="128" height="115"/>
+        <image name="multiply" catalog="system" width="128" height="111"/>
         <image name="photo.on.rectangle" catalog="system" width="128" height="96"/>
         <image name="square.stack.3d.down.forward.fill" catalog="system" width="124" height="128"/>
         <systemColor name="linkColor">
@@ -293,6 +340,9 @@
         </systemColor>
         <systemColor name="systemRedColor">
             <color red="1" green="0.23137254901960785" blue="0.18823529411764706" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+        <systemColor name="systemYellowColor">
+            <color red="1" green="0.80000000000000004" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
         <systemColor name="tertiarySystemGroupedBackgroundColor">
             <color red="0.94901960784313721" green="0.94901960784313721" blue="0.96862745098039216" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>

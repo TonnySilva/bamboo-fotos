@@ -7,10 +7,31 @@
 
 import UIKit
 
+
+
 class PictureFullScreenViewController: UIViewController {
+  
+  
 
   @IBOutlet weak var imageView: UIImageView!
   
+  
+  @IBAction func actionSwitch(_ sender: Any) {
+
+
+    print(switchMegusta.isOn)
+  }
+  
+  
+  @IBOutlet weak var switchMegusta: UISwitch!
+  
+
+  
+  @IBAction func xButton(_ sender: Any) {
+    
+    dismiss(animated: true, completion: nil)
+    
+  }
   
   
   override func viewDidLoad() {
@@ -32,5 +53,5 @@ class PictureFullScreenViewController: UIViewController {
         // Pass the selected object to the new view controller.
     }
     */
-
+  
 }
