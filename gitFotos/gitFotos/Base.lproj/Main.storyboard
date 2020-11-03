@@ -78,15 +78,46 @@
         <!--Albums-->
         <scene sceneID="gPp-n6-Mis">
             <objects>
-                <viewController id="uVx-JG-tm3" sceneMemberID="viewController">
+                <viewController id="uVx-JG-tm3" customClass="PictureFromUserViewController" customModule="gitFotos" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="DMH-75-7pH">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="sz1-vG-aU5">
+                                <rect key="frame" x="0.0" y="44" width="414" height="769"/>
+                            </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="N7W-a5-TwB">
+                                <rect key="frame" x="310" y="758" width="89" height="40"/>
+                                <color key="backgroundColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="40" id="N7V-ty-D2E"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" weight="medium" pointSize="20"/>
+                                <state key="normal" title="Elige Foto">
+                                    <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                                <connections>
+                                    <action selector="buttonPhoto:" destination="uVx-JG-tm3" eventType="touchUpInside" id="60o-Pk-NwB"/>
+                                </connections>
+                            </button>
+                        </subviews>
                         <viewLayoutGuide key="safeArea" id="BDj-pc-joy"/>
                         <color key="backgroundColor" systemColor="systemIndigoColor"/>
+                        <constraints>
+                            <constraint firstItem="sz1-vG-aU5" firstAttribute="leading" secondItem="BDj-pc-joy" secondAttribute="leading" id="3Sw-b4-1bE"/>
+                            <constraint firstItem="BDj-pc-joy" firstAttribute="trailing" secondItem="sz1-vG-aU5" secondAttribute="trailing" id="8Cb-i7-jvX"/>
+                            <constraint firstItem="sz1-vG-aU5" firstAttribute="top" secondItem="BDj-pc-joy" secondAttribute="top" id="AlL-ip-thV"/>
+                            <constraint firstItem="BDj-pc-joy" firstAttribute="bottom" secondItem="N7W-a5-TwB" secondAttribute="bottom" constant="15" id="DCA-LI-fje"/>
+                            <constraint firstItem="BDj-pc-joy" firstAttribute="trailing" secondItem="N7W-a5-TwB" secondAttribute="trailing" constant="15" id="fu2-vI-tqw"/>
+                            <constraint firstItem="N7W-a5-TwB" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="BDj-pc-joy" secondAttribute="leading" symbolic="YES" id="kAy-Bs-g7x"/>
+                            <constraint firstItem="BDj-pc-joy" firstAttribute="bottom" secondItem="sz1-vG-aU5" secondAttribute="bottom" id="wQS-be-Mhj"/>
+                        </constraints>
                     </view>
                     <tabBarItem key="tabBarItem" title="Albums" image="square.stack.3d.down.forward.fill" catalog="system" id="3lb-FY-yXx"/>
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
+                    <connections>
+                        <outlet property="imageView" destination="sz1-vG-aU5" id="Eld-PT-WuR"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="uuT-AD-pAH" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -129,8 +160,8 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleAspectFill" misplaced="YES" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="h85-8a-Hku">
-                                <rect key="frame" x="0.0" y="0.0" width="414" height="769"/>
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleAspectFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="h85-8a-Hku">
+                                <rect key="frame" x="0.0" y="44" width="414" height="720"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="ErC-GQ-AmF">
                                     <size key="itemSize" width="128" height="128"/>
