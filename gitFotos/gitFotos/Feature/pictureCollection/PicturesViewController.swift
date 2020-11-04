@@ -180,8 +180,10 @@ extension PictureViewController: UICollectionViewDelegate {
     //    asignando una posicion de la celda seleccionada en el picturefullscreen al darle clic y abrir la nueva pantalla
     PicturesViewModel.selectedImage =  ImagesData.imageForPosition(indexPath.row)
     //
+//
+    PicturesViewModel.selectedIndex = indexPath.row
+//    
     performSegue(withIdentifier: "segueToDetail", sender: nil)
-    
   }
 }
 
