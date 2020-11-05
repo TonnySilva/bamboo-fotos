@@ -12,7 +12,7 @@
         <!--Search-->
         <scene sceneID="Hff-jW-JcE">
             <objects>
-                <viewController id="8XQ-xH-BpX" sceneMemberID="viewController">
+                <viewController id="8XQ-xH-BpX" customClass="EmailViewController" customModule="gitFotos" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="YCU-kd-HrT">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -20,12 +20,12 @@
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="bottom" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="lo6-KV-SNi">
                                 <rect key="frame" x="15" y="54" width="384" height="138"/>
                                 <subviews>
-                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="text 1" borderStyle="roundedRect" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Cug-un-VJl">
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Nombre" clearsOnBeginEditing="YES" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="Cug-un-VJl">
                                         <rect key="frame" x="0.0" y="0.0" width="384" height="34"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                        <textInputTraits key="textInputTraits"/>
+                                        <textInputTraits key="textInputTraits" keyboardAppearance="light" returnKeyType="go"/>
                                     </textField>
-                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="textemail" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="yF6-79-w63">
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Email" textAlignment="natural" clearsOnBeginEditing="YES" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="yF6-79-w63">
                                         <rect key="frame" x="0.0" y="54" width="384" height="34"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <textInputTraits key="textInputTraits"/>
@@ -34,6 +34,9 @@
                                         <rect key="frame" x="328" y="108" width="56" height="30"/>
                                         <color key="backgroundColor" red="0.40355038789999997" green="1" blue="0.364709952" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                         <state key="normal" title="Guardar"/>
+                                        <connections>
+                                            <action selector="guardarButtonAction:" destination="8XQ-xH-BpX" eventType="touchUpInside" id="sed-Rc-a3z"/>
+                                        </connections>
                                     </button>
                                 </subviews>
                                 <constraints>
@@ -44,15 +47,16 @@
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="equalSpacing" alignment="top" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="x6l-3X-XYi" userLabel="Down Stack View">
                                 <rect key="frame" x="20" y="630" width="374" height="168"/>
                                 <subviews>
-                                    <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" text="Lorem ipsum dolor sit er elit lamet, coonscient to factor tum poen legum odioque civiuda." textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="FPI-yY-HMJ">
+                                    <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" text="Aqui mostraremos el nombre y la password almacenados" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="FPI-yY-HMJ">
                                         <rect key="frame" x="0.0" y="0.0" width="374" height="128"/>
                                         <color key="backgroundColor" systemColor="systemGrayColor"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="128" id="qxx-Y6-Kpj"/>
                                         </constraints>
                                         <color key="textColor" systemColor="labelColor"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                        <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                        <textInputTraits key="textInputTraits" autocapitalizationType="sentences" autocorrectionType="yes"/>
+                                        <dataDetectorType key="dataDetectorTypes" phoneNumber="YES" link="YES"/>
                                     </textView>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jUx-Fm-rG4">
                                         <rect key="frame" x="0.0" y="138" width="60" height="30"/>
@@ -82,6 +86,12 @@
                         </constraints>
                     </view>
                     <tabBarItem key="tabBarItem" title="Search" image="magnifyingglass" catalog="system" id="qFf-2O-YCU"/>
+                    <connections>
+                        <outlet property="buttonGuardarOutlet" destination="d51-Um-oTX" id="2FY-Qu-F4l"/>
+                        <outlet property="emailText" destination="yF6-79-w63" id="1Ua-hd-Xuk"/>
+                        <outlet property="nameText" destination="Cug-un-VJl" id="dbV-OI-0yR"/>
+                        <outlet property="textView" destination="FPI-yY-HMJ" id="wws-59-T8Z"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Kay-co-Isj" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>

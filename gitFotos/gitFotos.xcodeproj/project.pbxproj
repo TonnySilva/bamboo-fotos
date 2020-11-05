@@ -17,6 +17,7 @@
 		8A490D88254C308C00CA2B0C /* PicturesViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A490D87254C308C00CA2B0C /* PicturesViewModel.swift */; };
 		8A49A2CB25470A0900B8CAA6 /* PicturesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A49A2CA25470A0900B8CAA6 /* PicturesViewController.swift */; };
 		8A49A2CE25470A4D00B8CAA6 /* PicturesCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A49A2CD25470A4D00B8CAA6 /* PicturesCell.swift */; };
+		8A49BB5E25543BBA00FAAFBB /* EmailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A49BB5D25543BBA00FAAFBB /* EmailViewController.swift */; };
 		8A4A375D25514E1200882E20 /* PictureFromUserViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A4A375C25514E1200882E20 /* PictureFromUserViewController.swift */; };
 		8A4EBAC3254817040094C025 /* PicturesCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8A4EBAC2254817040094C025 /* PicturesCell.xib */; };
 		8A645CA5254FFA4F00F7D0DD /* RandomPictureViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A645CA4254FFA4F00F7D0DD /* RandomPictureViewController.swift */; };
@@ -96,6 +97,7 @@
 		8A490D87254C308C00CA2B0C /* PicturesViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PicturesViewModel.swift; sourceTree = "<group>"; };
 		8A49A2CA25470A0900B8CAA6 /* PicturesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PicturesViewController.swift; sourceTree = "<group>"; };
 		8A49A2CD25470A4D00B8CAA6 /* PicturesCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PicturesCell.swift; sourceTree = "<group>"; };
+		8A49BB5D25543BBA00FAAFBB /* EmailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmailViewController.swift; sourceTree = "<group>"; };
 		8A4A375C25514E1200882E20 /* PictureFromUserViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PictureFromUserViewController.swift; sourceTree = "<group>"; };
 		8A4EBAC2254817040094C025 /* PicturesCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PicturesCell.xib; sourceTree = "<group>"; };
 		8A645CA4254FFA4F00F7D0DD /* RandomPictureViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RandomPictureViewController.swift; sourceTree = "<group>"; };
@@ -208,6 +210,7 @@
 		8A49A2C82547098E00B8CAA6 /* Feature */ = {
 			isa = PBXGroup;
 			children = (
+				8A49BB5B2554398000FAAFBB /* Email */,
 				8A645CA7255000F400F7D0DD /* common */,
 				8A49A2C9254709AA00B8CAA6 /* pictureCollection */,
 			);
@@ -224,6 +227,14 @@
 				8A4EBAC2254817040094C025 /* PicturesCell.xib */,
 			);
 			path = pictureCollection;
+			sourceTree = "<group>";
+		};
+		8A49BB5B2554398000FAAFBB /* Email */ = {
+			isa = PBXGroup;
+			children = (
+				8A49BB5D25543BBA00FAAFBB /* EmailViewController.swift */,
+			);
+			path = Email;
 			sourceTree = "<group>";
 		};
 		8A4A375B25514DAC00882E20 /* PictureFromUser */ = {
@@ -467,6 +478,7 @@
 				8A4A375D25514E1200882E20 /* PictureFromUserViewController.swift in Sources */,
 				8A490D88254C308C00CA2B0C /* PicturesViewModel.swift in Sources */,
 				8A43A1602546D0050031B57F /* SceneDelegate.swift in Sources */,
+				8A49BB5E25543BBA00FAAFBB /* EmailViewController.swift in Sources */,
 				8A490D85254C281D00CA2B0C /* PictureFullScreenViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
