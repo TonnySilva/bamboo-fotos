@@ -175,16 +175,34 @@
                                     <action selector="xButton:" destination="Ecy-hN-Jb9" eventType="touchUpInside" id="SUB-Uo-zS8"/>
                                 </connections>
                             </button>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Lgg-Kz-QtM">
+                                <rect key="frame" x="20" y="60" width="374" height="34"/>
+                                <color key="backgroundColor" red="0.5390671306" green="1" blue="0.85592998539999998" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="N5V-6s-Zp6">
+                                <rect key="frame" x="15" y="724" width="276" height="34"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="uIp-jg-hVh"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
                             <constraint firstItem="aRo-d7-LEp" firstAttribute="top" secondItem="uIp-jg-hVh" secondAttribute="top" id="0ev-CN-JC8"/>
+                            <constraint firstItem="yVD-Q6-Bb3" firstAttribute="leading" secondItem="N5V-6s-Zp6" secondAttribute="trailing" constant="8" symbolic="YES" id="3iI-Uf-If4"/>
                             <constraint firstItem="aRo-d7-LEp" firstAttribute="trailing" secondItem="uIp-jg-hVh" secondAttribute="trailing" id="7j0-WL-XaA"/>
                             <constraint firstItem="uIp-jg-hVh" firstAttribute="bottom" secondItem="yVD-Q6-Bb3" secondAttribute="bottom" constant="15" id="834-th-KNf"/>
                             <constraint firstAttribute="trailing" secondItem="8fs-4P-48N" secondAttribute="trailing" constant="10" id="8UJ-J5-03x"/>
+                            <constraint firstItem="N5V-6s-Zp6" firstAttribute="leading" secondItem="uIp-jg-hVh" secondAttribute="leading" constant="15" id="Dqe-X4-5sX"/>
+                            <constraint firstItem="Lgg-Kz-QtM" firstAttribute="top" secondItem="8fs-4P-48N" secondAttribute="bottom" constant="25" id="KdF-Fq-LEE"/>
                             <constraint firstItem="uIp-jg-hVh" firstAttribute="trailing" secondItem="yVD-Q6-Bb3" secondAttribute="trailing" constant="15" id="PKf-bd-5wc"/>
+                            <constraint firstItem="Lgg-Kz-QtM" firstAttribute="leading" secondItem="uIp-jg-hVh" secondAttribute="leading" constant="20" id="VRn-aJ-CHt"/>
+                            <constraint firstItem="uIp-jg-hVh" firstAttribute="trailing" secondItem="Lgg-Kz-QtM" secondAttribute="trailing" constant="20" id="gq8-qP-81O"/>
                             <constraint firstItem="aRo-d7-LEp" firstAttribute="bottom" secondItem="uIp-jg-hVh" secondAttribute="bottom" id="jY7-6j-v8k"/>
+                            <constraint firstItem="uIp-jg-hVh" firstAttribute="bottom" secondItem="N5V-6s-Zp6" secondAttribute="bottom" constant="50" id="l5P-J0-AUr"/>
                             <constraint firstItem="8fs-4P-48N" firstAttribute="top" secondItem="uIp-jg-hVh" secondAttribute="top" constant="10" id="uTp-1a-hEh"/>
                             <constraint firstItem="aRo-d7-LEp" firstAttribute="leading" secondItem="uIp-jg-hVh" secondAttribute="leading" id="zyf-qH-7Wb"/>
                         </constraints>
@@ -192,6 +210,8 @@
                     <connections>
                         <outlet property="imageView" destination="aRo-d7-LEp" id="mo2-2h-k4p"/>
                         <outlet property="switchMegusta" destination="iwx-NQ-o0p" id="YFA-SL-r39"/>
+                        <outlet property="textDescription" destination="N5V-6s-Zp6" id="leu-YE-CfN"/>
+                        <outlet property="textField" destination="Lgg-Kz-QtM" id="Chg-1Q-dvD"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ihs-OL-swO" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>

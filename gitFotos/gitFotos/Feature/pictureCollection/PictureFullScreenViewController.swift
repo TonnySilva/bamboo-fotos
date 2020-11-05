@@ -11,6 +11,11 @@ import UIKit
 
 class PictureFullScreenViewController: UIViewController {
   
+  @IBOutlet weak var textDescription: UITextField!
+  
+  @IBOutlet weak var textField: UITextField!
+  
+  
   
   override func viewDidAppear(_ animated: Bool) {
     super.viewDidAppear(animated)
@@ -33,7 +38,6 @@ class PictureFullScreenViewController: UIViewController {
       ImagesData.dislikeImageAtPosition(index)
       print("apagado")
     }
-    
   }
   
   @IBOutlet weak var switchMegusta: UISwitch!
@@ -42,6 +46,8 @@ class PictureFullScreenViewController: UIViewController {
   
   @IBAction func xButton(_ sender: Any) {
     
+    ImagesData.setTitle(textField.text!, position: PicturesViewModel.selectedIndex!)
+    print(textField.text)
     dismiss(animated: true, completion: nil)
     
   }
@@ -50,10 +56,12 @@ class PictureFullScreenViewController: UIViewController {
   override func viewDidLoad() {
     super.viewDidLoad()
     
-    
     imageView.image = PicturesViewModel.selectedImage
     //    darle el switch asignado
     updateLikeSwitch()
+    
+    guard let index: Int = PicturesViewModel.selectedIndex else {return}
+    textField.text = ImagesData.getTitle(index)
     
   }
   //  funcion que me dice si es una true o false el switch
@@ -61,6 +69,11 @@ class PictureFullScreenViewController: UIViewController {
     guard let index: Int = PicturesViewModel.selectedIndex else {return}
     
     switchMegusta.isOn = ImagesData.likeForPosition(index)
+    
+    textDescription.text = ImagesData.getTitle(index)
+    
+    textDescription.text = ImagesData.likeForPosition(index).description
+    textDescription.text = ImagesData.imageForPosition(index)?.description
   }
   
   /*

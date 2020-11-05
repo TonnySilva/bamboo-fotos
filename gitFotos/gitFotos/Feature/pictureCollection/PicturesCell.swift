@@ -15,6 +15,4 @@ class PicturesCell: UICollectionViewCell {
   
   @IBOutlet weak var titleLabel: UILabel!
   
-  
-  
 }

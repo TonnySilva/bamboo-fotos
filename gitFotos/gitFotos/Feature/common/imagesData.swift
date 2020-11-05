@@ -11,8 +11,9 @@ import UIKit
 
 class ImagesData {
   
-  
   private static var likedImages: [Bool] = [Bool](repeating: false, count: numOfImages())
+  private static var imagesTitle: [String] = [String](repeating: "Foto sin título", count: numOfImages())
+  
   
   static func numOfImages() -> Int {
     //  1 solucion con el guard
@@ -69,4 +70,25 @@ class ImagesData {
     }
     return false
   }
+  
+  
+  // MARK: - Image description
+  static func setTitle(_ title: String, position: Int) {
+    imagesTitle[position] = title
+    
+  }
+  
+  static func getTitle(_ position: Int) -> String {
+    
+    return imagesTitle[position]
+  }
+  
+  // MARK: - Private utils
+  private static func safeIndex(_ position: Int) -> Int {
+    return position % numOfImages()
+  }
+  
+  
+  
 }
+
