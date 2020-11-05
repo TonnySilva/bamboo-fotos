@@ -15,17 +15,21 @@ class PictureFullScreenViewController: UIViewController {
   
   @IBOutlet weak var textField: UITextField!
   
+  @IBOutlet weak var textfieldOutlet: UITextField!
   
   
   override func viewDidAppear(_ animated: Bool) {
     super.viewDidAppear(animated)
-    print("didAppearfullscreen")
+    print("sabroooosssooooooooooooonnnnnnnnn")
     print(PicturesViewModel.selectedIndex)
     
   }
   
   @IBOutlet weak var imageView: UIImageView!
   
+  @IBOutlet weak var megustaOutlet: UILabel!
+  
+    
   
   @IBAction func actionSwitch(_ sender: Any) {
     
@@ -55,7 +59,7 @@ class PictureFullScreenViewController: UIViewController {
   
   override func viewDidLoad() {
     super.viewDidLoad()
-    
+    megustaOutlet.text = "I like it!"
     imageView.image = PicturesViewModel.selectedImage
     //    darle el switch asignado
     updateLikeSwitch()
@@ -71,7 +75,7 @@ class PictureFullScreenViewController: UIViewController {
     switchMegusta.isOn = ImagesData.likeForPosition(index)
     
     textDescription.text = ImagesData.getTitle(index)
-    
+ 
     textDescription.text = ImagesData.likeForPosition(index).description
     textDescription.text = ImagesData.imageForPosition(index)?.description
   }

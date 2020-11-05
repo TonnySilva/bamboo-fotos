@@ -12,7 +12,7 @@ import UIKit
 class ImagesData {
   
   private static var likedImages: [Bool] = [Bool](repeating: false, count: numOfImages())
-  private static var imagesTitle: [String] = [String](repeating: "Foto sin título", count: numOfImages())
+  private static var imagesTitle: [String] = [String](repeating: "o", count: numOfImages())
   
   
   static func numOfImages() -> Int {

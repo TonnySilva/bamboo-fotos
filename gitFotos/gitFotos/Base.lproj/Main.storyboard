@@ -2,7 +2,8 @@
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17156" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="lhd-If-9hh">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17126"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17125"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -137,29 +138,28 @@
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="yVD-Q6-Bb3">
                                 <rect key="frame" x="299" y="693" width="100" height="100"/>
                                 <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Me gusta!" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="stQ-S9-MWC">
-                                        <rect key="frame" x="1.5" y="0.0" width="98.5" height="27.5"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="23"/>
-                                        <nil key="textColor"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
                                     <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="iwx-NQ-o0p">
                                         <rect key="frame" x="51" y="69" width="51" height="31"/>
                                         <connections>
                                             <action selector="actionSwitch:" destination="Ecy-hN-Jb9" eventType="valueChanged" id="diA-5j-2Cb"/>
                                         </connections>
                                     </switch>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Me gusta!" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="stQ-S9-MWC">
+                                        <rect key="frame" x="8" y="0.0" width="98.5" height="27.5"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="23"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
                                 </subviews>
                                 <color key="backgroundColor" systemColor="systemYellowColor"/>
                                 <constraints>
+                                    <constraint firstItem="stQ-S9-MWC" firstAttribute="leading" secondItem="yVD-Q6-Bb3" secondAttribute="leading" constant="8" id="1rK-Ov-Zlu"/>
                                     <constraint firstAttribute="trailing" secondItem="iwx-NQ-o0p" secondAttribute="trailing" id="6fs-Q0-ed4"/>
-                                    <constraint firstAttribute="trailing" secondItem="stQ-S9-MWC" secondAttribute="trailing" id="7YX-OQ-aWV"/>
-                                    <constraint firstItem="stQ-S9-MWC" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="yVD-Q6-Bb3" secondAttribute="leading" constant="1.5" id="8Gf-OI-OPq"/>
                                     <constraint firstAttribute="bottom" secondItem="iwx-NQ-o0p" secondAttribute="bottom" id="G6Z-wt-vWf"/>
+                                    <constraint firstItem="stQ-S9-MWC" firstAttribute="top" secondItem="yVD-Q6-Bb3" secondAttribute="top" id="Kdy-FV-4Yd"/>
                                     <constraint firstAttribute="height" constant="100" id="mwq-Uu-C4N"/>
                                     <constraint firstAttribute="width" constant="100" id="udL-FU-Afe"/>
                                     <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="70" id="wqA-8G-EvT"/>
-                                    <constraint firstItem="stQ-S9-MWC" firstAttribute="top" secondItem="yVD-Q6-Bb3" secondAttribute="top" id="x83-wU-lOL"/>
                                 </constraints>
                             </view>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8fs-4P-48N">
@@ -209,9 +209,11 @@
                     </view>
                     <connections>
                         <outlet property="imageView" destination="aRo-d7-LEp" id="mo2-2h-k4p"/>
+                        <outlet property="megustaOutlet" destination="stQ-S9-MWC" id="h4l-dJ-WeD"/>
                         <outlet property="switchMegusta" destination="iwx-NQ-o0p" id="YFA-SL-r39"/>
                         <outlet property="textDescription" destination="N5V-6s-Zp6" id="leu-YE-CfN"/>
                         <outlet property="textField" destination="Lgg-Kz-QtM" id="Chg-1Q-dvD"/>
+                        <outlet property="textfieldOutlet" destination="N5V-6s-Zp6" id="bgN-7i-2Mr"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ihs-OL-swO" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
