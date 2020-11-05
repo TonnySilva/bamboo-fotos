@@ -3,7 +3,7 @@
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17125"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17126"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -16,14 +16,76 @@
                     <view key="view" contentMode="scaleToFill" id="YCU-kd-HrT">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="bottom" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="lo6-KV-SNi">
+                                <rect key="frame" x="15" y="54" width="384" height="138"/>
+                                <subviews>
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="text 1" borderStyle="roundedRect" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Cug-un-VJl">
+                                        <rect key="frame" x="0.0" y="0.0" width="384" height="34"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits"/>
+                                    </textField>
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="textemail" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="yF6-79-w63">
+                                        <rect key="frame" x="0.0" y="54" width="384" height="34"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits"/>
+                                    </textField>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="d51-Um-oTX">
+                                        <rect key="frame" x="328" y="108" width="56" height="30"/>
+                                        <color key="backgroundColor" red="0.40355038789999997" green="1" blue="0.364709952" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                        <state key="normal" title="Guardar"/>
+                                    </button>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstItem="Cug-un-VJl" firstAttribute="leading" secondItem="lo6-KV-SNi" secondAttribute="leading" id="4qm-7d-6Uy"/>
+                                    <constraint firstItem="yF6-79-w63" firstAttribute="leading" secondItem="lo6-KV-SNi" secondAttribute="leading" id="xov-N2-b1I"/>
+                                </constraints>
+                            </stackView>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="equalSpacing" alignment="top" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="x6l-3X-XYi" userLabel="Down Stack View">
+                                <rect key="frame" x="20" y="630" width="374" height="168"/>
+                                <subviews>
+                                    <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" text="Lorem ipsum dolor sit er elit lamet, coonscient to factor tum poen legum odioque civiuda." textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="FPI-yY-HMJ">
+                                        <rect key="frame" x="0.0" y="0.0" width="374" height="128"/>
+                                        <color key="backgroundColor" systemColor="systemGrayColor"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="128" id="qxx-Y6-Kpj"/>
+                                        </constraints>
+                                        <color key="textColor" systemColor="labelColor"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                    </textView>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jUx-Fm-rG4">
+                                        <rect key="frame" x="0.0" y="138" width="60" height="30"/>
+                                        <color key="backgroundColor" red="1" green="0.116620448" blue="0.14259425680000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="60" id="Pu1-lD-gad"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
+                                        <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <state key="normal" title="RESET"/>
+                                    </button>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstAttribute="trailing" secondItem="FPI-yY-HMJ" secondAttribute="trailing" id="2oB-cN-0lc"/>
+                                </constraints>
+                            </stackView>
+                        </subviews>
                         <viewLayoutGuide key="safeArea" id="44h-g3-CO8"/>
-                        <color key="backgroundColor" systemColor="systemRedColor"/>
+                        <color key="backgroundColor" red="0.82925841968911918" green="0.82925841968911918" blue="0.82925841968911918" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                        <constraints>
+                            <constraint firstItem="lo6-KV-SNi" firstAttribute="top" secondItem="44h-g3-CO8" secondAttribute="top" constant="10" id="6eC-EQ-QWE"/>
+                            <constraint firstItem="44h-g3-CO8" firstAttribute="bottom" secondItem="x6l-3X-XYi" secondAttribute="bottom" constant="15" id="GEy-6A-Uyt"/>
+                            <constraint firstItem="lo6-KV-SNi" firstAttribute="leading" secondItem="44h-g3-CO8" secondAttribute="leading" constant="15" id="Mkz-V7-JIW"/>
+                            <constraint firstItem="44h-g3-CO8" firstAttribute="trailing" secondItem="x6l-3X-XYi" secondAttribute="trailing" constant="20" id="aYg-lh-aq3"/>
+                            <constraint firstItem="lo6-KV-SNi" firstAttribute="trailing" secondItem="44h-g3-CO8" secondAttribute="trailing" constant="-15" id="oM4-cT-Dds"/>
+                            <constraint firstItem="x6l-3X-XYi" firstAttribute="leading" secondItem="44h-g3-CO8" secondAttribute="leading" constant="20" id="zzp-F5-8WN"/>
+                        </constraints>
                     </view>
                     <tabBarItem key="tabBarItem" title="Search" image="magnifyingglass" catalog="system" id="qFf-2O-YCU"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Kay-co-Isj" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="487" y="27"/>
+            <point key="canvasLocation" x="486.95652173913049" y="26.785714285714285"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="JO8-0v-72N">
@@ -345,11 +407,17 @@
         <image name="multiply" catalog="system" width="128" height="111"/>
         <image name="photo.on.rectangle" catalog="system" width="128" height="96"/>
         <image name="square.stack.3d.down.forward.fill" catalog="system" width="124" height="128"/>
+        <systemColor name="labelColor">
+            <color white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
         <systemColor name="linkColor">
             <color red="0.0" green="0.47843137254901963" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="systemGrayColor">
+            <color red="0.55686274509803924" green="0.55686274509803924" blue="0.57647058823529407" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
         <systemColor name="systemGreenColor">
             <color red="0.20392156862745098" green="0.7803921568627451" blue="0.34901960784313724" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -359,9 +427,6 @@
         </systemColor>
         <systemColor name="systemIndigoColor">
             <color red="0.34509803921568627" green="0.33725490196078434" blue="0.83921568627450982" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-        </systemColor>
-        <systemColor name="systemRedColor">
-            <color red="1" green="0.23137254901960785" blue="0.18823529411764706" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
         <systemColor name="systemYellowColor">
             <color red="1" green="0.80000000000000004" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>

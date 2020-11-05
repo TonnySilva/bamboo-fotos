@@ -20,7 +20,6 @@ class PictureFullScreenViewController: UIViewController {
   
   override func viewDidAppear(_ animated: Bool) {
     super.viewDidAppear(animated)
-    print("sabroooosssooooooooooooonnnnnnnnn")
     print(PicturesViewModel.selectedIndex)
     
   }
