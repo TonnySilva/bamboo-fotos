@@ -8,7 +8,7 @@
 import Foundation
 import UIKit
 
-
+     
 class ImagesData {
   
   private static var likedImages: [Bool] = [Bool](repeating: false, count: numOfImages())
