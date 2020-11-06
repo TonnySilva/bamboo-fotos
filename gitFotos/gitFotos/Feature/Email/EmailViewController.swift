@@ -11,27 +11,28 @@ class EmailViewController: UIViewController {
   
   //  primero creo la etiqueta donde guardo el string de nombre y email
   private let nameEmailKey: String = "MyNameAndEmailKey"
-  //
-  
+  //lista de strings
+  private var listOfEmails: [String] = []
+//
   @IBOutlet weak var nameText: UITextField!
   
   @IBOutlet weak var emailText: UITextField!
   
   @IBOutlet weak var textView: UITextView!
   
-//  accion boton reset
+  //  accion boton reset
   @IBAction func resetButton(_ sender: UIButton) {
     
-////    eliminar datos solucion
-//    UserDefaults.standard.removeObject(forKey: nameEmailKey)
-////    synchronize es para que lo elimine al momento de apretar el reset.
-//    UserDefaults.standard.synchronize()
+    ////    eliminar datos solucion , al picar reset sin alerta
+    //    UserDefaults.standard.removeObject(forKey: nameEmailKey)
+    ////    synchronize es para que lo elimine al momento de apretar el reset.
+    //    UserDefaults.standard.synchronize()
     
-//    alerta
-
-     let alert = UIAlertController(title: "CUIDADO!", message: "Estas seguro que quieres borrar?", preferredStyle: UIAlertController.Style.alert)
+    //   creacion de alerta
     
-//accion de eliminar con el boton Si
+    let alert = UIAlertController(title: "CUIDADO!", message: "Estas seguro que quieres borrar?", preferredStyle: UIAlertController.Style.alert)
+    
+    //accion de eliminar con el boton Si
     let action = UIAlertAction(title: "Si", style: UIAlertAction.Style.destructive, handler:
                                 { action in
                                   UserDefaults.standard.removeObject(forKey: self.nameEmailKey)
@@ -39,17 +40,17 @@ class EmailViewController: UIViewController {
                                   print("el usuario ha eliminado los datos")
                                 })
     alert.addAction(action)
-//    no eliminar los datos con el boton NO
+    //    no eliminar los datos con el boton NO
     let cancelAction = UIAlertAction(title: "No", style: UIAlertAction.Style.default, handler: //nil o tmbn puedo poner prints //
                                       {action in
                                         print("No elimino los datos")
                                       }
-                                     )
+    )
     alert.addAction(cancelAction)
     
     
-
-      self.present(alert, animated: true, completion: nil)
+    
+    self.present(alert, animated: true, completion: nil)
     
     
   }
@@ -61,31 +62,40 @@ class EmailViewController: UIViewController {
           let emailDeTexto: String = emailText.text else {return}
     
     let fullString: String = "\(nombreTexto);\(emailDeTexto)"
-    UserDefaults.standard.set(fullString, forKey: nameEmailKey)
+    //    UserDefaults.standard.set( fullString, forKey: nameEmailKey)
     
-   
+//agregar lista de string a fullstring
+    listOfEmails.append(fullString)
+    
+////    guardar lista de strings
+//    let lista: [String] = ["nombre 1 , email 1" , "emailDeTexto"]
+    
+    
+    UserDefaults.standard.set(listOfEmails, forKey: nameEmailKey)
+    UserDefaults.standard.synchronize()
   }
-
+  
   
   override func viewDidLoad() {
     super.viewDidLoad()
     
-    //    guard let emailDeTexto: String = emailText.text else {return}
     //
-    //    guard let nombreTexto: String = nameText.text else {return}
+    //    if let storedValue: String = UserDefaults.standard.string(forKey: nameEmailKey) {
+    //      textView.text.append("\n" + storedValue)
     //
-    //    UserDefaults.standard.set(true, forKey: nombreTexto)
+    //      print("Stored value: \(storedValue)")
+    //    }
+    //      creacion de una lista
     
-    
-    if let storedValue: String = UserDefaults.standard.string(forKey: nameEmailKey) {
-      textView.text.append("\n" + storedValue)
-      
-      print("Stored value: \(storedValue)")
-      
-      
-      
+    if let storedEmails: [String] = UserDefaults.standard.stringArray(forKey: nameEmailKey) {
+      listOfEmails.append(contentsOf: storedEmails)
+      for namemail in listOfEmails {
+        textView.text.append("\n" + namemail)
+        print(namemail)
+      }
+      print("Stored value: \(storedEmails)")
     }
-  
+    
   }
   
   /*
