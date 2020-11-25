@@ -87,8 +87,5 @@ class ImagesData {
   private static func safeIndex(_ position: Int) -> Int {
     return position % numOfImages()
   }
-  
-  
-  
 }
 

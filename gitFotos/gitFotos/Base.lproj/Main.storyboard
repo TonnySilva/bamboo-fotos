@@ -1,10 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17156" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="lhd-If-9hh">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17506" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="lhd-If-9hh">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17126"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17505"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="Stack View standard spacing" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -30,18 +31,44 @@
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <textInputTraits key="textInputTraits" autocorrectionType="no" keyboardType="emailAddress" textContentType="email"/>
                                     </textField>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="d51-Um-oTX">
-                                        <rect key="frame" x="328" y="108" width="56" height="30"/>
-                                        <color key="backgroundColor" red="0.40355038789999997" green="1" blue="0.364709952" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
-                                        <state key="normal" title="Guardar"/>
-                                        <connections>
-                                            <action selector="guardarButtonAction:" destination="8XQ-xH-BpX" eventType="touchUpInside" id="sed-Rc-a3z"/>
-                                        </connections>
-                                    </button>
+                                    <stackView opaque="NO" contentMode="scaleAspectFill" semanticContentAttribute="spatial" distribution="equalSpacing" spacingType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="PeB-Jd-45H">
+                                        <rect key="frame" x="20" y="108" width="364" height="30"/>
+                                        <subviews>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="d51-Um-oTX">
+                                                <rect key="frame" x="0.0" y="0.0" width="100" height="30"/>
+                                                <color key="backgroundColor" systemColor="systemBlueColor"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" constant="100" id="dxM-uQ-70f"/>
+                                                </constraints>
+                                                <state key="normal" title="Enviar">
+                                                    <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                </state>
+                                                <connections>
+                                                    <action selector="buttonEnviar:" destination="8XQ-xH-BpX" eventType="touchUpInside" id="eIX-uL-Eqy"/>
+                                                    <action selector="guardarButtonAction:" destination="8XQ-xH-BpX" eventType="touchUpInside" id="sed-Rc-a3z"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4II-9p-atY">
+                                                <rect key="frame" x="264" y="0.0" width="100" height="30"/>
+                                                <color key="backgroundColor" red="0.40355038789999997" green="1" blue="0.364709952" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" constant="100" id="UOk-A7-Jvf"/>
+                                                </constraints>
+                                                <state key="normal" title="Guardar">
+                                                    <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                </state>
+                                                <connections>
+                                                    <action selector="guardarButtonAction:" destination="8XQ-xH-BpX" eventType="touchUpInside" id="xn4-HZ-A6p"/>
+                                                </connections>
+                                            </button>
+                                        </subviews>
+                                    </stackView>
                                 </subviews>
                                 <constraints>
                                     <constraint firstItem="Cug-un-VJl" firstAttribute="leading" secondItem="lo6-KV-SNi" secondAttribute="leading" id="4qm-7d-6Uy"/>
+                                    <constraint firstItem="PeB-Jd-45H" firstAttribute="top" secondItem="yF6-79-w63" secondAttribute="bottom" constant="20" id="uO0-Ua-U8b"/>
                                     <constraint firstItem="yF6-79-w63" firstAttribute="leading" secondItem="lo6-KV-SNi" secondAttribute="leading" id="xov-N2-b1I"/>
+                                    <constraint firstItem="PeB-Jd-45H" firstAttribute="leading" secondItem="lo6-KV-SNi" secondAttribute="leading" constant="20" id="zMu-vX-ZR7"/>
                                 </constraints>
                             </stackView>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="equalSpacing" alignment="top" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="x6l-3X-XYi" userLabel="Down Stack View">
@@ -427,6 +454,9 @@
         </systemColor>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="systemBlueColor">
+            <color red="0.0" green="0.47843137254901963" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
         <systemColor name="systemGrayColor">
             <color red="0.55686274509803924" green="0.55686274509803924" blue="0.57647058823529407" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>

@@ -6,14 +6,34 @@
 //
 
 import UIKit
+import MessageUI
 
-class EmailViewController: UIViewController {
+
+class EmailViewController: UIViewController, MFMailComposeViewControllerDelegate {
+  //  botton de Enviar, me envia al correo
+  
+  @IBAction func buttonEnviar(_ sender: Any) {
+    
+    if MFMailComposeViewController.canSendMail() {
+    
+      let mail = MFMailComposeViewController()
+      mail.mailComposeDelegate = self
+      mail.setToRecipients([emailText.text ?? ""])
+      mail.setMessageBody("hola \(nameText.text ?? "")", isHTML: false)
+    
+      
+      present(mail, animated: true)
+      
+    }
+    
+  }
+  
   
   //  primero creo la etiqueta donde guardo el string de nombre y email
   private let nameEmailKey: String = "MyNameAndEmailKey"
   //lista de strings
   private var listOfEmails: [String] = []
-//
+  //
   @IBOutlet weak var nameText: UITextField!
   
   @IBOutlet weak var emailText: UITextField!
@@ -30,10 +50,10 @@ class EmailViewController: UIViewController {
     
     //   creacion de alerta
     
-    let alert = UIAlertController(title: "CUIDADO!", message: "Estas seguro que quieres borrar?", preferredStyle: UIAlertController.Style.alert)
+    let alert = UIAlertController(title: "CUIDADO!", message: "Estas seguro que quieres borrar?", preferredStyle: UIAlertController.Style.actionSheet)
     
     //accion de eliminar con el boton Si
-    let action = UIAlertAction(title: "Si", style: UIAlertAction.Style.destructive, handler:
+    let action = UIAlertAction(title: "Destructive!", style: UIAlertAction.Style.destructive, handler:
                                 { action in
                                   UserDefaults.standard.removeObject(forKey: self.nameEmailKey)
                                   UserDefaults.standard.synchronize()
@@ -41,14 +61,17 @@ class EmailViewController: UIViewController {
                                 })
     alert.addAction(action)
     //    no eliminar los datos con el boton NO
-    let cancelAction = UIAlertAction(title: "No", style: UIAlertAction.Style.default, handler: //nil o tmbn puedo poner prints //
+    let cancelAction = UIAlertAction(title: "Cancel!", style: UIAlertAction.Style.cancel, handler: //nil o tmbn puedo poner prints //
                                       {action in
                                         print("No elimino los datos")
-                                      }
-    )
+                                      })
     alert.addAction(cancelAction)
     
-    
+    let defaultAction = UIAlertAction(title: "Default!", style: UIAlertAction.Style.default, handler: //nil o tmbn puedo poner prints //
+                                        {action in
+                                          print("No elimino los datos")
+                                        })
+    alert.addAction(defaultAction)
     
     self.present(alert, animated: true, completion: nil)
     
@@ -64,11 +87,11 @@ class EmailViewController: UIViewController {
     let fullString: String = "\(nombreTexto);\(emailDeTexto)"
     //    UserDefaults.standard.set( fullString, forKey: nameEmailKey)
     
-//agregar lista de string a fullstring
+    //agregar lista de string a fullstring
     listOfEmails.append(fullString)
     
-////    guardar lista de strings
-//    let lista: [String] = ["nombre 1 , email 1" , "emailDeTexto"]
+    ////    guardar lista de strings
+    //    let lista: [String] = ["nombre 1 , email 1" , "emailDeTexto"]
     
     
     UserDefaults.standard.set(listOfEmails, forKey: nameEmailKey)
